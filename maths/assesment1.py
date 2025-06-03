@@ -27,7 +27,7 @@ def sum_of_multiples():
 
     sum = 0
 
-    while number <= 1000:
+    while number < 1000:
         if number % 3 == 0 or number % 5 == 0:
             sum += number
         number += 1
@@ -46,4 +46,19 @@ def sum_of_multiples_b(list_of_numbers, begin, end):
 
 print(sum_of_multiples_b([3, 5, 12], 400, 1842))  # Example usage
 #o/p:998002
+
+
+#Updated code using product() from itertools
+
+from itertools import product
+
+def sum_of_multiples_b_product(list_of_numbers, begin, end):
+    total = 0
+    for factor, number in product(list_of_numbers, range(begin, end + 1)):
+        if number % factor == 0:
+            total += number
+    return total
+print(sum_of_multiples_b_product([3, 5, 12], 400, 1942))
+
+#o/p: 1113441
 
