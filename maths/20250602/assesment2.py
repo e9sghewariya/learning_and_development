@@ -85,9 +85,13 @@ def solver(start, end, even=False, odd=False):
 
     return total
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
     
 >>>>>>> dev_readme
+=======
+    
+>>>>>>> learning_and_development
 print(solver(1, 10, even=True, odd=False))  
 #o/p: 10
