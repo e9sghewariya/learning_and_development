@@ -23,44 +23,47 @@
 # solver(value)
 # ```
 
+#updated check prime function
+import math
+
 def check_prime(num):
-    if(num <= 1):
+    if num <= 1:
         return False
-    
-    count = 0
-
-    for i in range(1, num):
-        if(num % i == 0):
-            count += 1
-
-    if(count == 2):
+    if num == 2:
         return True
-    else:
+    if num % 2 == 0:
         return False
-    
+    for i in range(3, int(math.isqrt(num)) + 1, 2):
+        if num % i == 0:
+            return False
+    return True
+
 
 def answer():
-    max = 0
+    n = 600851475143
+    factor = 2
+    last_factor = 1
+    while factor * factor <= n:
+        if n % factor == 0:
+            n //= factor
+            last_factor = factor
+        else:
+            factor += 1 if factor == 2 else 2
+    if n > 1:
+        return n 
+    return last_factor
 
-    for i in range(1, 600851475143):
-        if(check_prime(i)):
-            max = i
-    return max
 print(answer())
 
 
 
 def answer(value):
-
-    num = 1
-    max = 0
-    while num > value:
-
-        if (value % num == 0) and check_prime(num):
-            if num > max:
-                max = num
-
-        num += 1
-    return max
+    for num in range(value // 2, 2, -1):
+        if num % 2 == 0:
+            continue 
+        if value % num == 0 and check_prime(num):
+            return num  
+    return value if check_prime(value) else None
 
 print(answer(475143))  
+
