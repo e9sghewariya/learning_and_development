@@ -84,6 +84,10 @@ def solver(start, end, even=False, odd=False):
         num2 = num1 + num2
 
     return total
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> dev_readme
 print(solver(1, 10, even=True, odd=False))  
 #o/p: 10
