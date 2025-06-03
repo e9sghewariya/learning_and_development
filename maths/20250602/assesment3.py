@@ -65,5 +65,5 @@ def answer(value):
             return num  
     return value if check_prime(value) else None
 
-print(answer(475143))  
+print(answer(10))  
 

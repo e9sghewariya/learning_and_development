@@ -22,18 +22,33 @@
 # sum_of_multiples([3, 5, 12], 400, 1842)
 # ```
 
-def sum_of_multiples():
-    number = 1
+# def sum_of_multiples():
+#     number = 1
 
-    sum = 0
+#     sum = 0
 
-    while number < 1000:
-        if number % 3 == 0 or number % 5 == 0:
-            sum += number
-        number += 1
-    return sum
-print(sum_of_multiples())
-#o/p: 234168
+#     while number < 1000:
+#         if number % 3 == 0 or number % 5 == 0:
+#             sum += number
+#         number += 1
+#     return sum
+# print(sum_of_multiples())
+
+#updated part a code using itertools.product
+from itertools import product
+
+
+def sum_of_multiples_using_product():
+    total = 0
+    numbers = range(1, 1000)
+    multiples = [3, 5]
+    
+    for i, j in product(multiples, numbers):
+        if j % i == 0:
+            total += j
+    return sum(set(j for i, j in product(multiples, numbers) if j % i == 0))
+print(sum_of_multiples_using_product())
+# o/p: 233168
 #part b
 
 def sum_of_multiples_b(list_of_numbers, begin, end):
@@ -49,8 +64,6 @@ print(sum_of_multiples_b([3, 5, 12], 400, 1842))  # Example usage
 
 
 #Updated code using product() from itertools
-
-from itertools import product
 
 def sum_of_multiples_b_product(list_of_numbers, begin, end):
     total = 0

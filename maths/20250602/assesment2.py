@@ -77,21 +77,14 @@ def solver(start, end, even=False, odd=False):
     total = 0
 
     while num1 <= end:
-        if num2 >= start:
-            if (even and num1 % 2 == 0) or (odd and num2 % 2 != 0):
+        if num1 >= start:
+            if (even and num1 % 2 == 0) or (odd and num1 % 2 != 0):
                 total += num1
-        num1 = num2
-        num2 = num1 + num2
+        num1, num2 = num2, num1 + num2 
 
     return total
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> dev_readme
-=======
-    
->>>>>>> learning_and_development
+# Example
+
 print(solver(1, 10, even=True, odd=False))  
 #o/p: 10
