@@ -56,15 +56,34 @@ print(answer())
 
 #o/p: 4613732
 
-def answer_b(star, end, even=False, odd=False):
+# def answer_b(star, end, even=False, odd=False):
+#     if not even and not odd:
+#         return 0
+
+#     sum = 0
+#     for i in range(star, end + 1):
+#         if (even and i % 2 == 0) or (odd and i % 2 != 0):
+#             sum += i
+#     return sum
+
+#***correct code***#
+def solver(start, end, even=False, odd=False):
+    if start > end:
+        return None
     if not even and not odd:
         return 0
 
-    sum = 0
-    for i in range(star, end + 1):
-        if (even and i % 2 == 0) or (odd and i % 2 != 0):
-            sum += i
-    return sum
+    num1, num2 = 0, 1
+    total = 0
 
-print(answer_b(1, 10, even=True, odd=False))  # Example usage
-#o/p: 30
+    while num1 <= end:
+        if num2 >= start:
+            if (even and num1 % 2 == 0) or (odd and num2 % 2 != 0):
+                total += num1
+        num1 = num2
+        num2 = num1 + num2
+
+    return total
+
+print(solver(1, 10, even=True, odd=False))  
+#o/p: 10
