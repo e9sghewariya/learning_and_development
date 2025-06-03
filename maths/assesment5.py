@@ -27,41 +27,64 @@
 # solver(p, q)
 # ```
 
-def answer():
+# def answer():
     
-    num = 2
+#     num = 2
     
-    while True:
+#     while True:
         
-        divisible = True
+#         divisible = True
         
-        for i in range(1, 21):
-            if num % i != 0:
-                divisible = False
-                break
+#         for i in range(1, 21):
+#             if num % i != 0:
+#                 divisible = False
+#                 break
         
-        if divisible:
-            return num  
-        num += 1
-print(answer())
+#         if divisible:
+#             return num  
+#         num += 1
+# print(answer())
 
+#updated code :
+import math
+
+def lcm(a, b):
+    return abs(a * b) // math.gcd(a, b)
+
+def answer():
+    num = 1
+    for i in range(2, 21):  # from 2 to 20
+        num = lcm(num, i)
+    return num
+
+print(answer())  # Output: 232792560
+
+
+
+# def solver(p, q):
+#     if p > q:
+#         p, q = q, p  
+    
+#     num = 2
+    
+#     while True:
+        
+#         divisible = True
+        
+#         for i in range(p, q + 1):
+#             if num % i != 0:
+#                 divisible = False
+#                 break
+        
+#         if divisible:
+#             return num 
+#         num += 1
+#updated code:
 def solver(p, q):
     if p > q:
-        p, q = q, p  
-    
-    num = 2
-    
-    while True:
-        
-        divisible = True
-        
-        for i in range(p, q + 1):
-            if num % i != 0:
-                divisible = False
-                break
-        
-        if divisible:
-            return num 
-        num += 1
-        
+        p, q = q, p
+    num = 1
+    for i in range(p, q + 1):
+        num = lcm(num, i)
+    return num        
 print(solver(1, 20))

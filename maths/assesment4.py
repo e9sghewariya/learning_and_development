@@ -69,10 +69,10 @@ def solver(n, p=None, q=None):
 
     max_palindrome = 0
     for i in range(upper, lower - 1, -1):
-        for j in range(i, lower - 1, -1):  # avoid duplicate combinations
+        for j in range(i, lower - 1, -1):  
             product = i * j
             if product <= max_palindrome:
-                break  # no need to continue if product is already smaller
+                break  
             if check_palindrome(product):
                 if product > max_palindrome:
                     max_palindrome = product
