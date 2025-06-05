@@ -14,5 +14,4 @@ Python is an Interpreted Language:
 -->Because of it being interpreted language, it saves considerable time during program development because of not necessary compilation and linking
 
 Extensive Library:
-
 --> Has a very wide varity of libraries for development

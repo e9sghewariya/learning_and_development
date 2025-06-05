@@ -1,10 +1,22 @@
-"""assessment_date_fileIO.py
-This script contains various tasks related to date and file operations in Python."""
+"""
+assessment_date_file_io.py
+This script contains various tasks 
+related to date and file operations in Python.
+"""
+
+import os
+import json
+import datetime
+import shutil
+from datetime import timedelta
+
+
 
 # #Task1: Age Calculator - python
 #     1. Take `Date of Birth`(str - %Y-%m-%d) as an input from user.
 #     2. Calculate and display the current age based on `Date of Birth`.
 from datetime import datetime
+
 
 def age_calculator():
     """Calculate and display the user's age based on their date of birth."""
@@ -22,15 +34,14 @@ def age_calculator():
         age -= 1
 
     print(f"You are {age} years old.")
+
+
 age_calculator()
 
 
 # - Task2: Dates in different timezones - python
 #     1. Take a list of timezones as an input from the user.
 #     2. Display current time in each of those timezones.
-
-from datetime import datetime, timedelta
-
 
 def show_time_in_timezones():
     """Display current time in different timezones based on user input."""
@@ -40,7 +51,7 @@ def show_time_in_timezones():
     for offset_str in offsets:
         try:
             offset = float(offset_str.strip())
-            now_utc = datetime.utcnow()
+            now_utc = datetime.now()
             local_time = now_utc + timedelta(hours=offset)
             print(f"UTC{offset:+}: {local_time.strftime('%Y-%m-%d %H:%M:%S')}")
         except ValueError:
@@ -50,12 +61,10 @@ def show_time_in_timezones():
 show_time_in_timezones()
 
 # Task3: File organization - python
-#     1. Take a directory path as an input from user.
-#     2. Based on the filetype(file extension), organize the files in different subdirectories.
-#     3. Print structure of this directory.
-
-import os
-import shutil
+# 1. Take a directory path as an input from user.
+# 2. Based on the filetype(file extension),
+# organize the files in different subdirectories.
+# 3. Print structure of this directory.
 
 
 def organize_files_by_type(directory):
@@ -82,8 +91,6 @@ def organize_files_by_type(directory):
 #     3. Sort the data in this file based on the key "name".
 #     4. Store the sorted results in file "sorted_data.json"
 
-import os
-import json
 
 def combine_and_sort_json(folder):
     """Combine JSON files in a folder and sort the data by 'name'."""
@@ -91,16 +98,16 @@ def combine_and_sort_json(folder):
 
     for filename in os.listdir(folder):
         if filename.endswith(".json"):
-            with open(os.path.join(folder, filename), "r") as f:
+            with open(os.path.join(folder, filename), "r", encoding="utf-8") as f:
                 data = json.load(f)
                 if isinstance(data, list):
                     combined_data.extend(data)
                 else:
                     combined_data.append(data)
 
-    with open("combined_data.json", "w") as f:
+    with open("combined_data.json", "w", encoding="utf-8") as f:
         json.dump(combined_data, f, indent=2)
 
     sorted_data = sorted(combined_data, key=lambda x: x.get("name", ""))
-    with open("sorted_data.json", "w") as f:
+    with open("sorted_data.json", "w", encoding="utf-8") as f:
         json.dump(sorted_data, f, indent=2)

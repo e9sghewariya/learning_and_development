@@ -1,6 +1,10 @@
-# # Problem 4
+# pylint: disable=line-too-long
+# pylint: disable=missing-module-docstring
 
-# A palindromic number reads the same both ways. The largest 
+
+# Problem 4
+
+# A palindromic number reads the same both ways. The largest
 # palindrome made from the product of two 2-digit numbers is 9009.
 
 # ```
@@ -29,6 +33,7 @@
 # - the first n digit number to p if only p is provided
 # - p and q if p and q are both provided
 
+
 def check_palindrome(num):
     reverse = 0
 
@@ -40,6 +45,7 @@ def check_palindrome(num):
 
     return original == reverse
 
+
 def answer():
     max_palindrome = 0
 
@@ -50,33 +56,35 @@ def answer():
                 max_palindrome = product
     return max_palindrome
 
+
 print(answer())
-#o/p: 906609
-#part b
+# o/p: 906609
+# part b
+
 
 def solver(n, p=None, q=None):
-    
-    lower = 10**(n - 1)
+
+    lower = 10 ** (n - 1)
     upper = 10**n - 1
 
     # Adjust bounds if p and/or q are provided
     if p is not None and q is not None:
         lower = min(p, q)
-        upper =  max(p, q)
+        upper = max(p, q)
     elif p is not None:
-        lower = 10**(n - 1) 
+        lower = 10 ** (n - 1)
         upper = p
 
     max_palindrome = 0
     for i in range(upper, lower - 1, -1):
-        for j in range(i, lower - 1, -1):  
+        for j in range(i, lower - 1, -1):
             product = i * j
             if product <= max_palindrome:
-                break  
+                break
             if check_palindrome(product):
-                if product > max_palindrome:
-                    max_palindrome = product
+                max_palindrome = max(max_palindrome, product)
     return max_palindrome
 
-print(solver(3, 20, 322))  
-#o/p: 94249
+
+print(solver(3, 20, 322))
+# o/p: 94249

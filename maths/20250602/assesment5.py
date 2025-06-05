@@ -1,3 +1,6 @@
+## pylint: disable=line-too-long
+# pylint: disable=missing-module-docstring
+
 # # Problem 5
 
 # 2520 is the smallest number that can be divided by each of the
@@ -5,10 +8,10 @@
 
 # ## Part A
 
-# What is the smallest positive number that is evenly divisible by 
+# What is the smallest positive number that is evenly divisible by
 # all of the numbers from 1 to 20?
 
-# Edit the file answer.py and update the function `answer()` to return 
+# Edit the file answer.py and update the function `answer()` to return
 # the answer.
 
 # ```
@@ -28,28 +31,30 @@
 # ```
 
 # def answer():
-    
+
 #     num = 2
-    
+
 #     while True:
-        
+
 #         divisible = True
-        
+
 #         for i in range(1, 21):
 #             if num % i != 0:
 #                 divisible = False
 #                 break
-        
+
 #         if divisible:
-#             return num  
+#             return num
 #         num += 1
 # print(answer())
 
-#updated code :
+# updated code :
 import math
+
 
 def lcm(a, b):
     return abs(a * b) // math.gcd(a, b)
+
 
 def answer():
     num = 1
@@ -57,34 +62,37 @@ def answer():
         num = lcm(num, i)
     return num
 
-print(answer())  # Output: 232792560
 
+print(answer())  # Output: 232792560
 
 
 # def solver(p, q):
 #     if p > q:
-#         p, q = q, p  
-    
+#         p, q = q, p
+
 #     num = 2
-    
+
 #     while True:
-        
+
 #         divisible = True
-        
+
 #         for i in range(p, q + 1):
 #             if num % i != 0:
 #                 divisible = False
 #                 break
-        
+
+
 #         if divisible:
-#             return num 
+#             return num
 #         num += 1
-#updated code:
+# updated code:
 def solver(p, q):
     if p > q:
         p, q = q, p
     num = 1
     for i in range(p, q + 1):
         num = lcm(num, i)
-    return num        
+    return num
+
+
 print(solver(1, 20))

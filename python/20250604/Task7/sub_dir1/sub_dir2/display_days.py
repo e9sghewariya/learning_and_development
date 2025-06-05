@@ -1,6 +1,6 @@
 """File I/O Assignment"""
-from get_month import get_month
-from get_no_of_days import get_days_in_month
+from ...get_month import get_month
+from ...get_no_of_days import get_days_in_month
 
 
 def display_days():

@@ -1,3 +1,5 @@
+# pylint: disable=line-too-long
+# pylint: disable=missing-module-docstring
 # # Problem 3
 
 # The prime factors of 13,195 are 5, 7, 13, and 29.
@@ -14,17 +16,18 @@
 
 # ## Part B
 
-# Write a function in python that returns the largest prime factor of a given number. 
+# Write a function in python that returns the largest prime factor of a given number.
 
-# Edit the file solver.py to update the function `solver` to 
+# Edit the file solver.py to update the function `solver` to
 # return the answer when called as in the below example.
 
 # ```
 # solver(value)
 # ```
 
-#updated check prime function
+# updated check prime function
 import math
+
 
 def check_prime(num):
     if num <= 1:
@@ -50,20 +53,20 @@ def answer():
         else:
             factor += 1 if factor == 2 else 2
     if n > 1:
-        return n 
+        return n
     return last_factor
+
 
 print(answer())
 
 
-
-def answer(value):
+def answer_2(value):
     for num in range(value // 2, 2, -1):
         if num % 2 == 0:
-            continue 
+            continue
         if value % num == 0 and check_prime(num):
-            return num  
+            return num
     return value if check_prime(value) else None
 
-print(answer(10))  
 
+print(answer_2(10))

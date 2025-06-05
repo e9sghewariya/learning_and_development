@@ -1,4 +1,8 @@
-# # Problem 7
+# pylint: disable=line-too-long
+# pylint: disable=missing-module-docstring
+
+
+# Problem 7
 
 # By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.
 
@@ -19,6 +23,7 @@
 # ```
 import math
 
+
 def check_prime(num):
     if num <= 1:
         return False
@@ -31,6 +36,7 @@ def check_prime(num):
             return False
     return True
 
+
 def answer():
     count = 0
     num = 1
@@ -39,11 +45,14 @@ def answer():
         if check_prime(num):
             count += 1
     return num
+
+
 print(answer())
-#output: 104743
+# output: 104743
 
 
-#part b:
+# part b:
+
 
 def solver(n):
     count = 0
@@ -53,5 +62,7 @@ def solver(n):
         if check_prime(num):
             count += 1
     return num
-print(solver(11005)) 
-#o/p: 116507
+
+
+print(solver(11005))
+# o/p: 116507

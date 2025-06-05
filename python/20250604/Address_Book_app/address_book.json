@@ -1,0 +1,127 @@
+[
+    {
+        "name": "sheldon cooper",
+        "email": "sheldon@caltech.edu",
+        "dob": "1980-02-26"
+    },
+    {
+        "name": "leonard hofstadter",
+        "email": "leonard@caltech.edu",
+        "dob": "1980-05-17"
+    },
+    {
+        "name": "penny",
+        "email": "penny@neb.com",
+        "dob": "1985-12-02"
+    },
+    {
+        "name": "howard wolowitz",
+        "email": "howard@nasa.gov",
+        "dob": "1981-03-01"
+    },
+    {
+        "name": "raj koothrappali",
+        "email": "raj@planetary.org",
+        "dob": "1981-10-06"
+    },
+    {
+        "name": "bernadette rostenkowski",
+        "email": "bernadette@ucla.edu",
+        "dob": "1984-03-22"
+    },
+    {
+        "name": "amy farrah fowler",
+        "email": "amy@neurobio.org",
+        "dob": "1983-11-02"
+    },
+    {
+        "name": "stuart bloom",
+        "email": "stuart@comiccenter.com",
+        "dob": "1979-07-14"
+    },
+    {
+        "name": "ross geller",
+        "email": "ross@nyu.edu",
+        "dob": "1967-10-18"
+    },
+    {
+        "name": "rachel green",
+        "email": "rachel@ralphlauren.com",
+        "dob": "1969-05-05"
+    },
+    {
+        "name": "monica geller",
+        "email": "monica@gellerkitchen.com",
+        "dob": "1969-04-22"
+    },
+    {
+        "name": "chandler bing",
+        "email": "chandler@statisticalanalysis.com",
+        "dob": "1968-04-08"
+    },
+    {
+        "name": "joey tribbiani",
+        "email": "joey@acting.com",
+        "dob": "1968-01-09"
+    },
+    {
+        "name": "phoebe buffay",
+        "email": "phoebe@songsbyphoebe.com",
+        "dob": "1967-02-16"
+    },
+    {
+        "name": "gunther",
+        "email": "gunther@centralperk.com",
+        "dob": "1965-10-25"
+    },
+    {
+        "name": "bugs bunny",
+        "email": "bugs@warnerbros.com",
+        "dob": "1940-07-27"
+    },
+    {
+        "name": "daffy duck",
+        "email": "daffy@warnerbros.com",
+        "dob": "1937-04-17"
+    },
+    {
+        "name": "elmer fudd",
+        "email": "elmer@warnerbros.com",
+        "dob": "1940-03-02"
+    },
+    {
+        "name": "porky pig",
+        "email": "porky@warnerbros.com",
+        "dob": "1935-03-02"
+    },
+    {
+        "name": "sylvester cat",
+        "email": "sylvester@warnerbros.com",
+        "dob": "1945-12-17"
+    },
+    {
+        "name": "tweety bird",
+        "email": "tweety@warnerbros.com",
+        "dob": "1942-11-21"
+    },
+    {
+        "name": "marvin the martian",
+        "email": "marvin@warnerbros.com",
+        "dob": "1948-07-24"
+    },
+    {
+        "name": "wile e. coyote",
+        "email": "wile@acme.com",
+        "dob": "1949-09-17"
+    },
+    {
+        "name": "road runner",
+        "email": "roadrunner@acme.com",
+        "dob": "1949-09-17"
+    },
+    {
+        "name": "taz devil",
+        "email": "taz@warnerbros.com",
+        "dob": "1954-05-19"
+    }
+]
