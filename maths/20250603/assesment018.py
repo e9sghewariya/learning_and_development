@@ -1,6 +1,7 @@
 """
 assessment013.py
 This file is part of the Python Project Euler Solutions repository."""
+
 # # Problem No. 18
 # ## Maximum Path Sum - Simple
 
@@ -75,6 +76,7 @@ def answer():
             )
     return triangle_data[0][0]
 
+
 print(answer())
 # Output: 1074
 
@@ -93,4 +95,7 @@ def solver(height):
             )
 
     return triangle[0][0]
+
+
 print(solver(15))
+# output:8701

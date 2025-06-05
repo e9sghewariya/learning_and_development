@@ -1,5 +1,4 @@
-# pylint: disable=line-too-long
-# pylint: disable=missing-module-docstring
+"""This module calculates the sum of even and odd Fibonacci numbers."""
 
 # # Problem 2
 
@@ -38,7 +37,10 @@
 
 
 def answer():
-    sum = 0
+    """
+    Returns the sum of even-valued terms in the Fibonacci sequence
+    """
+    total = 0
     num1 = 0
     num2 = 1
 
@@ -46,12 +48,12 @@ def answer():
 
     while number <= 4000000:
         if number % 2 == 0:
-            sum += number
+            total += number
 
         num1 = num2
         num2 = number
         number = num1 + num2
-    return sum
+    return total
 
 
 print(answer())
@@ -61,6 +63,11 @@ print(answer())
 
 # ***correct code***#
 def solver(start, end, even=False, odd=False):
+    """
+    Returns the sum of Fibonacci numbers between start and end (inclusive).
+    Includes even numbers if `even` is True, odd numbers if `odd` is True.
+    Returns None if start > end.
+    """
     if start > end:
         return None
     if not even and not odd:
@@ -78,7 +85,5 @@ def solver(start, end, even=False, odd=False):
     return total
 
 
-# Example
-
-print(solver(1, 10, even=True, odd=False))
-# o/p: 10
+# Example usage
+print(solver(1, 10, even=True, odd=False))  # Output: 10

@@ -1,5 +1,5 @@
-# pylint: disable=line-too-long
-# pylint: disable=missing-module-docstring
+"""This module is for prime numbers and factors."""
+
 # # Problem 3
 
 # The prime factors of 13,195 are 5, 7, 13, and 29.
@@ -26,23 +26,14 @@
 # ```
 
 # updated check prime function
-import math
+from utils import check_prime
 
-
-def check_prime(num):
-    if num <= 1:
-        return False
-    if num == 2:
-        return True
-    if num % 2 == 0:
-        return False
-    for i in range(3, int(math.isqrt(num)) + 1, 2):
-        if num % i == 0:
-            return False
-    return True
 
 
 def answer():
+    """
+    Returns the largest prime factor of 600851475143.
+    """
     n = 600851475143
     factor = 2
     last_factor = 1
@@ -61,6 +52,10 @@ print(answer())
 
 
 def answer_2(value):
+    """
+    Returns the largest prime factor of the given number `value`.
+    If the number itself is prime, returns the number.
+    """
     for num in range(value // 2, 2, -1):
         if num % 2 == 0:
             continue

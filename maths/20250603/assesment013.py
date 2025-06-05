@@ -233,10 +233,12 @@ numbers = [
     20849603980134001723930671666823555245252804609722,
     53503534226472524250874054075591789781264330331690,
 ]
+
+
 def answer():
     """Calculate the first ten digits of the sum of the provided numbers.
-    This function sums a list of 100 large numbers and returns the first 
-    ten digits of the result. """
+    This function sums a list of 100 large numbers and returns the first
+    ten digits of the result."""
     sum_value = sum(numbers)
 
     return str(sum_value)[:10]
@@ -246,7 +248,7 @@ print(answer())
 
 
 def solver(x, n, y):
-    """"
+    """ "
     This the generic function to find the x digits of the sum of n y-digit numbers.
     It takes three parameters:
     - x: the number of digits to return from the sum

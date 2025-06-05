@@ -1,11 +1,12 @@
-""""
+""" "
 assessment014.py
-This script contains solutions to the Project Euler Problem No. 14, 
-which involves finding the starting number under one million that 
+This script contains solutions to the Project Euler Problem No. 14,
+which involves finding the starting number under one million that
 produces the longest Collatz sequence.
-It also includes a function to find the number with the longest Collatz sequence within a 
+It also includes a function to find the number with the longest Collatz sequence within a
 specified range defined by parameters `p` and `q`.
 """
+
 # <!-- # Problem No. 14
 
 # ## Longest Collatz Sequence
@@ -48,6 +49,7 @@ specified range defined by parameters `p` and `q`.
 
 # ## References
 
+
 # [Project Euler Problem 14](https://projecteuler.net/problem=14)
 # (https://en.wikipedia.org/wiki/Collatz_conjecture)
 # (https://www.quantamagazine.org/why-mathematicians-still-cant-solve-
@@ -83,8 +85,8 @@ print(answer())
 
 
 def solver(p: int = None, q: int = None):
-    """ This is the generic function to find
-    the number with the longest Collatz sequence 
+    """This is the generic function to find
+    the number with the longest Collatz sequence
     within a specified range defined by parameters p and q."""
     if p is None and q is None:
         return None

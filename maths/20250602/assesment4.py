@@ -1,6 +1,4 @@
-# pylint: disable=line-too-long
-# pylint: disable=missing-module-docstring
-
+"""This module is for palindromic numbers."""
 
 # Problem 4
 
@@ -23,7 +21,11 @@
 
 # ## Part B
 
-# Write a function that returns the largest palindrome from the product of two n-digit numbers where both numbers are inside a range.
+# Write a function that returns the
+# largest palindrome
+# from the product of two n-digit
+# numbers where both numbers
+# are inside a range.
 
 # ```
 # solver(n, p=None, q=None)
@@ -35,6 +37,7 @@
 
 
 def check_palindrome(num):
+    """Check whether the given number is a palindrome."""
     reverse = 0
 
     original = num
@@ -47,6 +50,9 @@ def check_palindrome(num):
 
 
 def answer():
+    """
+    Returns the largest palindromic number made from the product of two 3-digit numbers.
+    """
     max_palindrome = 0
 
     for i in range(999, 100, -1):
@@ -63,7 +69,22 @@ print(answer())
 
 
 def solver(n, p=None, q=None):
+    """
+    Returns the largest palindrome
+    made from the product of two
+    n-digit numbers.
 
+    Parameters:
+        n (int): Number of digits for the multiplicands.
+        p (int, optional): If provided, limits the upper
+        bound (or one end of a range if q is provided).
+        q (int, optional): If provided along with p,
+        defines the upper and lower bounds of the range.
+
+    Returns:
+        int: The largest palindromic product
+        within the specified range.
+    """
     lower = 10 ** (n - 1)
     upper = 10**n - 1
 

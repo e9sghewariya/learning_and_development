@@ -1,6 +1,7 @@
-""""
+""" "
 assessment020: Factorial Digit Sum
 """
+
 # # Problem No. 20
 
 # ## Factorial Digit Sum
@@ -26,9 +27,10 @@ assessment020: Factorial Digit Sum
 # solver(n: int)
 # ```
 
+
 def get_factorial(n):
     """Calculate the factorial of a number n."""
-    if n == 0 or n == 1:
+    if n in (0, 1):
         return 1
     result = 1
     for i in range(2, n + 1):
@@ -40,11 +42,17 @@ def answer():
     """Find the sum of the digits in the number 100!."""
     fact_of_100 = get_factorial(100)
     return sum(int(digit) for digit in str(fact_of_100))
+
+
 print(answer())
-#o/p:648
+
+
+# o/p:648
 def solver(n):
     """Find the sum of the digits in the number n!."""
     fact_of_n = get_factorial(n)
     return sum(int(digit) for digit in str(fact_of_n))
+
+
 print(solver(1000))  # Example usage
-#o/p: 10539
+# o/p: 10539

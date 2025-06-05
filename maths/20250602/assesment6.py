@@ -1,5 +1,4 @@
-# pylint: disable=line-too-long
-# pylint: disable=missing-module-docstring
+"""Calculate the difference between the sum of squares and square of sums for natural numbers."""
 
 # # Problem 6
 
@@ -15,11 +14,14 @@
 # (1 + 2 + ... + 10)^2 = 55^2 = 3025
 # ```
 
-# Hence the difference between the sum of the squares of the first ten natural numbers and the square of the sum is `3025 − 385 = 2640`.
+# Hence the difference between the sum of the squares
+# of the first ten natural numbers and the square of the
+# sum is `3025 − 385 = 2640`.
 
 # ## Part A
 
-# Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
+# Find the difference between the sum of the squares of the
+# first one hundred natural numbers and the square of the sum.
 
 # ```
 # answer()
@@ -27,13 +29,23 @@
 
 # ## Part B
 
-# Find the difference between the sum of the squares of the consecutive natural numbers starting with  and p and ending at q and the square of the sum of consecutive natural numbers starting with p and q.
+# Find the difference between the sum of the squares of the
+# consecutive natural numbers starting with  and p and ending
+# at q and the square of the sum of consecutive natural numbers
+# starting with p and q.
 
 # ```
 # solver(p, q)
 
 
 def answer():
+    """
+    Returns the difference between the square of the sum and the sum of the squares
+    of the first 100 natural numbers.
+
+    Returns:
+        int: The difference between (1+2+...+100)^2 and (1^2 + 2^2 + ... + 100^2).
+    """
     n = 100
     sum_of_squares = 0
 
@@ -51,6 +63,15 @@ print(answer())
 
 
 def solver(p, q):
+    """
+    Returns the difference between the square of the
+    sum and the sum of the squares
+    of the first 100 natural numbers.
+
+    Returns:
+        int: The difference between (1+2+...+100)^2 and
+        (1^2 + 2^2 + ... + 100^2).
+    """
     if p > q:
         p, q = q, p  # Ensure p is less than or equal to q
 
