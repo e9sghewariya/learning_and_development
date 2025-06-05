@@ -4,7 +4,9 @@ from get_no_of_days import get_days_in_month
 
 
 def display_days():
-    """Display the number of days in a month based on user input."""
+    """
+    Display the number of days in a month based on user input.
+    """
     date_str = input("Enter date (YYYY/MM/DD): ")
     parts = date_str.split("/")
     if len(parts) == 3:
