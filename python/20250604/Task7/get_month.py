@@ -4,7 +4,6 @@ File I/O Assignment
 
 from datetime import datetime
 
-
 def get_month(date_str):
     """Extract the month from a date string in YYYY/MM/DD format."""
     try:
