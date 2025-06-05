@@ -7,12 +7,6 @@ This file is part of the Python Project Euler Solutions repository."""
 
 # By starting at the top of the triangle below
 # and moving to adjacent numbers on the row below, the maximum total from top to bottom is $23$.</p>
-# <p align="center">
-#   <span style="text-decoration: underline;"><b>3</b></span><br>
-#   <span style="text-decoration: underline;"><b>7</b></span> 4<br>
-#   2 <span style="text-decoration: underline;"><b>4</b></span> 6<br>
-#   8 5 <span style="text-decoration: underline;"><b>9</b></span> 3
-# </p>
 # <p>That is, $3 + 7 + 4 + 9 = 23$.</p>
 # ## Part A
 # <p>Find the maximum total from top to bottom of the triangle below:</p>
@@ -68,34 +62,48 @@ triangle_data = [
 
 
 def answer():
-    """Find the maximum total from top to bottom of the triangle."""
-    for row in range(len(triangle_data) - 2, -1, -1):
-        for col in range(len(triangle_data[row])):
-            triangle_data[row][col] = triangle_data[row][col] + max(
-                triangle_data[row + 1][col], triangle_data[row + 1][col + 1]
-            )
-    return triangle_data[0][0]
+    """Top-down max path sum for full triangle (15 rows)."""
+    triangle = [row[:] for row in triangle_data]  # Create a fresh copy of each row
+
+    for row in range(1, len(triangle)):
+        for col in range(len(triangle[row])):
+            if col == 0:
+                triangle[row][col] += triangle[row - 1][col]
+            elif col == len(triangle[row]) - 1:
+                triangle[row][col] += triangle[row - 1][col - 1]
+            else:
+                triangle[row][col] += max(
+                    triangle[row - 1][col - 1], triangle[row - 1][col]
+                )
+    return max(triangle[-1])
 
 
-print(answer())
-# Output: 1074
+print(answer())  # Output: 1074
 
 
 def solver(height):
-    """Find the maximum total from top to bottom of a triangle of variable height."""
+    """Top-down max path sum for variable height triangle."""
     if height <= 0 or height > len(triangle_data):
         return None
 
-    triangle = triangle_data[:height]
+    triangle = [
+        row[:] for row in triangle_data[:height]
+    ]  # Copy only up to given height
 
-    for row in range(len(triangle) - 2, -1, -1):
+    for row in range(1, height):
         for col in range(len(triangle[row])):
-            triangle[row][col] = triangle[row][col] + max(
-                triangle[row + 1][col], triangle[row + 1][col + 1]
-            )
+            if col == 0:
+                triangle[row][col] += triangle[row - 1][col]
+            elif col == len(triangle[row]) - 1:
+                triangle[row][col] += triangle[row - 1][col - 1]
+            else:
+                triangle[row][col] += max(
+                    triangle[row - 1][col - 1], triangle[row - 1][col]
+                )
 
-    return triangle[0][0]
+    return max(triangle[-1])
 
 
-print(solver(15))
-# output:8701
+# Usage
+print(solver(15))  # Output: 1074
+print(solver(4))  # Output: 234

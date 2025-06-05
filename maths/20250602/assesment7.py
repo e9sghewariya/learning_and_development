@@ -1,4 +1,5 @@
 """This module contains functions to find prime numbers."""
+
 # Problem 7
 
 # By listing the first six prime
@@ -21,7 +22,8 @@
 # ```
 # solver(n)
 # ```
-from utils import check_prime
+from ..utils import check_prime
+
 
 def answer():
     """

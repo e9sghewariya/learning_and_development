@@ -1,4 +1,5 @@
 """All assignment related to lists."""
+
 # pylint: disable=pointless-string-statement
 
 
@@ -149,6 +150,8 @@ print(remove_occurrences([1, 2, 3, 4, 2, 5], 2))
 
 
 """All assignment related to dictionaries."""
+
+
 # Write a Python function to merge two dictionaries.
 def merge_dicts(d1, d2):
     """Merge two dictionaries, with d2 overwriting d1's keys."""
@@ -201,6 +204,8 @@ def remove_by_value(d, value):
 print(remove_by_value({"a": 1, "b": 2, "c": 1}, 1))
 
 """All assignment related to tuples."""
+
+
 # Write a Python function that
 # takes two tuples as input and
 # returns a new tuple containing elements from both tuples.
@@ -235,6 +240,8 @@ def find_index(t, number):
 print(find_index((1, 2, 3, 4, 5), 3))
 
 """All assignment related to strings."""
+
+
 # Given a sentence, write a
 # Python function to capitalize
 # the first letter of each word.
@@ -243,6 +250,8 @@ def capitalize_words(sentence):
     words = sentence.split()
     capitalized = [word[0].upper() + word[1:].lower() if word else "" for word in words]
     return " ".join(capitalized)
+
+
 print(capitalize_words("hello world! this is a test."))
 
 
@@ -254,6 +263,8 @@ def reverse_words(sentence):
     words = sentence.split()
     reversed_words = words[::-1]
     return " ".join(reversed_words)
+
+
 print(reverse_words("A quick brown fox jumps over the lazy dog"))
 
 
@@ -262,6 +273,8 @@ def longest_word(sentence):
     """Find the longest word in a sentence."""
     words = sentence.split()
     return max(words, key=len) if words else ""
+
+
 print(
     longest_word(
         "A quick brown fox jumps over the lazy dog and jumps high again from mountain and dies"

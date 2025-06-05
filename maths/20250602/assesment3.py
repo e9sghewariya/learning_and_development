@@ -26,8 +26,7 @@
 # ```
 
 # updated check prime function
-from utils import check_prime
-
+import math
 
 
 def answer():
@@ -52,16 +51,21 @@ print(answer())
 
 
 def answer_2(value):
-    """
-    Returns the largest prime factor of the given number `value`.
-    If the number itself is prime, returns the number.
-    """
-    for num in range(value // 2, 2, -1):
-        if num % 2 == 0:
-            continue
-        if value % num == 0 and check_prime(num):
-            return num
-    return value if check_prime(value) else None
+    """Return the largest prime factor of the given number."""
+    if value <= 1:
+        return None
+    while value % 2 == 0:
+        last_factor = 2
+        value //= 2
+    factor = 3
+    max_factor = math.isqrt(value)
+    while factor <= max_factor and value > 1:
+        while value % factor == 0:
+            last_factor = factor
+            value //= factor
+            max_factor = math.isqrt(value)
+        factor += 2
+    return value if value > 1 else last_factor
 
 
 print(answer_2(10))

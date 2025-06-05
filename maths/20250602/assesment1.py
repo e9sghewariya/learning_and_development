@@ -22,36 +22,15 @@
 
 # Edit the file solver.py to update the function `sum_of_multiples`
 # which returns the answer when called as in the below example.
-
-# ```
-# sum_of_multiples([3, 5, 12], 400, 1842)
-# ```
-
-# def sum_of_multiples():
-#     number = 1
-
-#     sum = 0
-
-#     while number < 1000:
-#         if number % 3 == 0 or number % 5 == 0:
-#             sum += number
-#         number += 1
-#     return sum
-# print(sum_of_multiples())
-
 # updated part a code using itertools.product
 from itertools import product
 
 
 def sum_of_multiples_using_product():
     """Calculate the sum of all multiples of 3 or 5 below 1000 using itertools.product."""
-    total = 0
     numbers = range(1, 1000)
     multiples = [3, 5]
 
-    for i, j in product(multiples, numbers):
-        if j % i == 0:
-            total += j
     return sum(set(j for i, j in product(multiples, numbers) if j % i == 0))
 
 
@@ -61,30 +40,36 @@ print(sum_of_multiples_using_product())
 
 
 def sum_of_multiples_b(list_of_numbers, begin, end):
-    """Calculate the sum of all multiples of a list of factors between start and end, inclusive."""
+    """
+    Calculate the sum of all multiples
+    of a list of factors between start and
+    end, inclusive.
+    """
     total = 0
-    for i in list_of_numbers:
-        for j in range(begin, end + 1):
-            if j % i == 0:
-                total += j
+    for num in enumerate(range(begin, end + 1)):
+        if any(num % factor == 0 for factor in list_of_numbers):
+            total += num
     return total
 
 
 print(sum_of_multiples_b([3, 5, 12], 400, 1842))  # Example usage
 # o/p:998002
 
-
 # Updated code using product() from itertools
 
 
 def sum_of_multiples_b_product(list_of_numbers, begin, end):
-    """Calculate the sum of all multiples of a list
-    of factors between start and end, inclusive, using itertools.product."""
-    total = 0
-    for factor, number in product(list_of_numbers, range(begin, end + 1)):
-        if number % factor == 0:
-            total += number
-    return total
+    """
+    Calculate the sum of all unique multiples
+    of given factors between begin and end, using
+    itertools.product.
+    """
+    multiples = {
+        number
+        for factor, number in product(list_of_numbers, range(begin, end + 1))
+        if number % factor == 0
+    }
+    return sum(multiples)
 
 
 print(sum_of_multiples_b_product([3, 5, 12], 400, 1942))

@@ -1,6 +1,6 @@
 """
 assessment_date_file_io.py
-This script contains various tasks 
+This script contains various tasks
 related to date and file operations in Python.
 """
 
@@ -9,7 +9,6 @@ import json
 import datetime
 import shutil
 from datetime import timedelta
-
 
 
 # #Task1: Age Calculator - python
@@ -42,6 +41,7 @@ age_calculator()
 # - Task2: Dates in different timezones - python
 #     1. Take a list of timezones as an input from the user.
 #     2. Display current time in each of those timezones.
+
 
 def show_time_in_timezones():
     """Display current time in different timezones based on user input."""

@@ -247,19 +247,30 @@ def answer():
 print(answer())
 
 
-def solver(x, n, y):
-    """ "
-    This the generic function to find the x digits of the sum of n y-digit numbers.
-    It takes three parameters:
-    - x: the number of digits to return from the sum
-    - n: the total number of y-digit numbers
-    - y: the number of digits in each number
+def solver(x, n, y, numbers_list):
     """
+    Returns the first x digits of the sum of n y-digit numbers.
 
-    selected_numbers = numbers[:y] + numbers[-x:]
+    Parameters:
+      x (int): The number of most significant digits to return.
+      n (int): The expected count of numbers in the list.
+      y (int): The expected number of digits for each number.
+      numbers (list[int]): The list containing the numbers.
 
-    total_sum = sum(selected_numbers)
-    return str(total_sum)[:n]
+    Returns:
+      str: The first x digits of the total sum.
+    """
+    if len(numbers_list) != n:
+        raise ValueError(f"Expected {n} numbers, but got {len(numbers_list)}.")
+    for num in numbers_list:
+        num_str = str(num).lstrip("-")
+        if len(num_str) != y:
+            raise ValueError(
+                f"Number {num} does not have {y} digits (found {len(num_str)})."
+            )
+    total_sum = sum(numbers_list)
+    return str(total_sum)[:x]
 
 
-print(solver(10, 100, 50))  # Example usage
+print(solver(10, 100, 50, numbers))
+# Expected output: '5537376230'

@@ -1,6 +1,8 @@
-""" Utility functions for mathematical operations.""" 
+"""Utility functions for mathematical operations."""
+
 # utils.py
 import math
+
 
 def check_prime(num):
     """
