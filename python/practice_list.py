@@ -1,5 +1,5 @@
 """
-This script generates a list of even numbers from 0 to 100  """
+This script generates a list of even numbers from 0 to 100"""
 
 even_list = []
 
