@@ -1,0 +1,80 @@
+[
+    {
+        "id": 7038,
+        "name": "Sheldon",
+        "age": 42,
+        "score": 56.62
+    },
+    {
+        "id": 8055,
+        "name": "Bernadette",
+        "age": 45,
+        "score": 64.1
+    },
+    {
+        "id": 7885,
+        "name": "Sheldon",
+        "age": 44,
+        "score": 46.34
+    },
+    {
+        "id": 7816,
+        "name": "Joey",
+        "age": 25,
+        "score": 86.84
+    },
+    {
+        "id": 5081,
+        "name": "Howard",
+        "age": 21,
+        "score": 28.43
+    },
+    {
+        "id": 3756,
+        "name": "Monica",
+        "age": 30,
+        "score": 72.61
+    },
+    {
+        "id": 1722,
+        "name": "Raj",
+        "age": 50,
+        "score": 78.1
+    },
+    {
+        "id": 6633,
+        "name": "Sheldon",
+        "age": 34,
+        "score": 9.86
+    },
+    {
+        "id": 6262,
+        "name": "Rachel",
+        "age": 32,
+        "score": 82.35
+    },
+    {
+        "id": 7962,
+        "name": "Amy",
+        "age": 27,
+        "score": 40.23
+    },
+    {
+        "id": 6570,
+        "name": "Sheldon",
+        "age": 40,
+        "score": 40.68
+    },
+    {
+        "id": 6063,
+        "name": "Sheldon",
+        "age": 43,
+        "score": 9.08
+    },
+    {
+        "id": 3151,
+        "name": "Ross",
+        "age": 42,
+        "score": 19.29
+    }
+]
