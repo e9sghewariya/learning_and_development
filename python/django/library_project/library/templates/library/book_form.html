@@ -1,0 +1,14 @@
+<!-- library/templates/library/book_form.html -->
+{% extends "library/base.html" %}
+
+{% block title %}Book Form{% endblock %}
+{% block header %}Add/Edit Book{% endblock %}
+
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+</form>
+<a href="{% url 'book-list' %}">Back to Books</a>
+{% endblock %}

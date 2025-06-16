@@ -1,0 +1,14 @@
+<!-- library/templates/library/author_confirm_delete.html -->
+{% extends "library/base.html" %}
+
+{% block title %}Delete Author{% endblock %}
+{% block header %}Delete Author{% endblock %}
+
+{% block content %}
+<p>Are you sure you want to delete "{{ object.name }}"?</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Yes, Delete</button>
+</form>
+<a href="{% url 'author-list' %}">Cancel</a>
+{% endblock %}

@@ -1,0 +1,10 @@
+<h2>Collections</h2>
+<ul>
+  {% for collection in collections %}
+    <li>
+      <a href="{% url 'books:collection_detail' collection.pk %}">
+        {{ collection.name }}
+      </a>
+    </li>
+  {% endfor %}
+</ul>

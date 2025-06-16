@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head><title>Collection Detail</title></head>
+<body>
+    <h1>{{ collection.name }}</h1>
+    <p>{{ collection.description }}</p>
+
+    <h2>Books in this Collection:</h2>
+    <ul>
+        {% for book in collection.books.all %}
+            <li>{{ book.title }} by {{ book.author.name }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

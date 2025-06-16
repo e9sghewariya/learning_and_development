@@ -1,0 +1,10 @@
+<h2>Publishers</h2>
+<ul>
+  {% for publisher in publishers %}
+    <li>
+      <a href="{% url 'books:publisher_detail' publisher.pk %}">
+        {{ publisher.name }}
+      </a>
+    </li>
+  {% endfor %}
+</ul>

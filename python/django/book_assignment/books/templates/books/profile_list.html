@@ -1,0 +1,10 @@
+<h2>Profiles</h2>
+<ul>
+  {% for profile in profiles %}
+    <li>
+      <a href="{% url 'books:profile_detail' profile.pk %}">
+        {{ profile.email }}
+      </a>
+    </li>
+  {% endfor %}
+</ul>

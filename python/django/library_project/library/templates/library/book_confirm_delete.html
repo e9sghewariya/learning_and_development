@@ -1,0 +1,14 @@
+<!-- library/templates/library/book_confirm_delete.html -->
+{% extends "library/base.html" %}
+
+{% block title %}Delete Book{% endblock %}
+{% block header %}Delete Book{% endblock %}
+
+{% block content %}
+<p>Are you sure you want to delete "{{ object.title }}"?</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Yes, Delete</button>
+</form>
+<a href="{% url 'book-list' %}">Cancel</a>
+{% endblock %}

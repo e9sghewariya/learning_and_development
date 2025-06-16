@@ -1,0 +1,14 @@
+<!-- library/templates/library/author_form.html -->
+{% extends "library/base.html" %}
+
+{% block title %}Author Form{% endblock %}
+{% block header %}Add/Edit Author{% endblock %}
+
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+</form>
+<a href="{% url 'author-list' %}">Back to Authors</a>
+{% endblock %}
